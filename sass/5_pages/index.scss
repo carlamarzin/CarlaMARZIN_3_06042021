@@ -1,0 +1,180 @@
+.city{
+    width: 100%;
+    background-color: #eaeaea;
+    padding: 15px;
+    &__wrapper{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        img{
+            width: 16px;
+            height: 16px;
+        }
+    }
+    p{
+        margin-left: 12px;
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+
+.explore{
+    background-color: #f6f6f6;
+    padding: 50px 35px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    h1{
+        text-align: center;
+        font-size: 1.7em;
+        margin-bottom: 0.8em;
+    }
+    p{
+        text-align: center;
+        font-size: 1em;
+        margin-bottom: 1.3em;
+    }
+    button:hover{
+        @include box-shadow-hoover;
+    }
+}
+
+.functionning{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 40px 20px;
+    &__step{
+        background: $background-color-1;
+        padding: 20px;
+        margin-bottom: 2em;
+        margin-left: 10px;
+        border-radius: 20px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        @include box-shadow;
+        &:hover{
+            background: lighten($primary-color, 35%);
+            @include box-shadow-hoover;
+        }
+        img{
+            height: 20px;
+            width: 20px;
+            margin-left: 1em;
+            &__hover{
+                fill: $primary-color;
+            }
+        }
+        p{
+            margin-left: 1em;
+            font-weight: bold;
+        }
+        span{
+            display: block;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: -10px;
+            text-align: center;
+            background: $primary-color;
+            color: white;
+            border-radius: 50px;
+            padding: 5px;
+        }
+    }
+}
+
+.restaurants{
+    background: $background-color-1;
+    padding: 40px 20px;
+
+    &__card{
+        height: 250px;
+        margin-bottom: 18px;
+        background: white;
+        border-radius: 10px;
+        @include box-shadow;
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            transform: scale(1.01);
+            @include box-shadow-hoover;
+        }
+
+        span{
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: $third-color;
+            color: darken($third-color, 30);
+            border-radius: 3px;
+            padding: 7px;
+            font-weight: bold;
+        }
+        &__img{
+            object-fit: cover;
+            width: 100%;
+            height: 175px;
+            border-radius: 10px 10px 0 0;
+        }
+        &__text{
+            background: white;
+            height: 75px;
+            border-radius: 0 0 10px 10px;
+            padding: 16px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            position: relative;
+            h2{
+                font-weight: bold;
+            }
+            p{
+                font-size: 1.1em;
+                padding-top: 5px;
+            }
+            img{
+                position: absolute;
+                top: 28px;
+                right: 25px;
+                height: 20px;
+                width: 20px;
+            }
+        }
+    }
+}
+
+.footer{
+    background: $footer-color;
+    color: white;
+    padding: 25px;
+    &__logo{
+        width: 100px;
+        margin-bottom: 20px;
+    }
+    ul{
+        li{
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: row;
+            &:hover{
+                font-weight: bold;
+            }
+        }
+        img{
+            width: 12px;
+            height: 12px;
+            margin-right: 7px;
+        }
+    }
+}

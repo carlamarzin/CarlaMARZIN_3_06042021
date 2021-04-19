@@ -1,10 +1,23 @@
 @charset 'utf-8';
 
-@import "./utils/variables";
-@import "./utils/fonctions";
-@import "./utils/mixins.scss";
-@import "./utils/placeholders.scss";
-@import "./layouts/form";
+@import "./1_base/autre";
+@import "./1_base/reset";
+@import "./1_base/typography";
+
+@import "./2_utils/variables";
+@import "./2_utils/mixins";
+@import "./2_utils/placeholders";
+
+@import "./3_layouts/header";
+@import "./3_layouts/footer";
+
+@import "./4_components/buttons";
+
+@import "./5_pages/àlafrançaise";
+@import "./5_pages/index.scss"; 
+@import "./5_pages/lanoteenchantée.scss";
+@import "./5_pages/lapalettedugout.scss";
+@import "./5_pages/ledélicedessens.scss";
 
 /*
 @import "feuilles de styles";
