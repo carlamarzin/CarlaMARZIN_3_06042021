@@ -1,0 +1,116 @@
+main{
+    width: 100%;
+}
+
+.image_restaurant{
+        width: 100%;
+}
+
+.menu{
+    border-radius: 30px 30px 0 0;
+    background-color: $background-color-1;
+    padding: 35px 15px 80px 15px;
+    display: flex;
+    flex-direction: column;
+    &__title{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        &__h1{
+            margin-bottom: 0;
+        }
+        &__heart{
+            width: 22px;
+            height: 22px;
+            margin-right: 15px;
+            &:hover{
+                background: linear-gradient(#f69d3c, #3f87a6);
+            }
+        }
+    }
+    &__listing{
+        margin-bottom: 35px;
+        &__h2{
+            margin-bottom: 10px;
+        }
+        &__underline{
+            background-color: $third-color;
+            height: 3px;
+            width: 40px;
+            margin-bottom: 15px;
+        }
+        &__plat{
+            background-color: white;
+            border-radius: 10px;
+            @include box-shadow;
+            margin-bottom: 15px;
+            padding: 15px 0 15px 12px;
+            position: relative;
+
+            animation-name: cardapparition;
+            animation-duration: 2s;
+            animation-fill-mode: backwards;
+
+            span{
+                position: absolute;
+                right: 10px;
+                bottom: 15px;
+                font-weight: bold;
+            }
+        }
+        
+        .delay0{
+            animation-delay: 0;
+        }
+        .delay1{
+            animation-delay: $card-delay;
+        }
+        .delay2{
+            animation-delay: $card-delay*2;
+        }
+        .delay3{
+            animation-delay: $card-delay*3;
+        }
+        .delay4{
+            animation-delay: $card-delay*4;
+        }
+        .delay5{
+            animation-delay: $card-delay*5;
+        }
+        .delay6{
+            animation-delay: $card-delay*6;
+        }
+        .delay7{
+            animation-delay: $card-delay*7;
+        }
+        .delay8{
+            animation-delay: $card-delay*8;
+        }
+        .delay9{
+            animation-delay: $card-delay*9;
+        }
+        button{
+            align-items: center;
+        }
+    }
+
+}
+
+.checkbox{
+    &__logo{
+        width: 20px;
+        height: 20px;
+        display: none;
+    }
+}
+
+@keyframes cardapparition {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

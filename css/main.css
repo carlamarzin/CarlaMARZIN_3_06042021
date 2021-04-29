@@ -77,6 +77,20 @@ h2 {
   font-size: 1.2em;
 }
 
+.menu__title__h1 {
+  font-family: "Shrikhand", serif;
+  font-size: 1.5rem;
+}
+
+.menu__listing__h2 {
+  text-transform: uppercase;
+}
+
+.menu__listing__plat h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
 /* 
 $breakpoints: (
   'medium': (min-width: 800px),
@@ -90,11 +104,40 @@ $breakpoints: (
   display: flex;
   justify-content: center;
   align-content: center;
+  position: relative;
   padding: 18px;
   box-shadow: 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.35);
 }
 .header__arrow {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 25px;
+}
+.header .displaynone {
   display: none;
+}
+.footer {
+  background: #353535;
+  color: white;
+  padding: 25px;
+}
+.footer__logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+.footer ul li {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+}
+.footer ul li:hover {
+  font-weight: bold;
+}
+.footer ul img {
+  width: 12px;
+  height: 12px;
+  margin-right: 7px;
 }
 
 button {
@@ -102,14 +145,125 @@ button {
   color: white;
   font-weight: bold;
   border: none;
-  padding: 1em 0;
+  padding: 1rem 0;
   border-radius: 100px;
   box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  width: 185px;
 }
 button:hover {
   background: linear-gradient(#ff8de0, #9e67e0);
 }
 
+main {
+  width: 100%;
+}
+
+.image_restaurant {
+  width: 100%;
+}
+
+.menu {
+  border-radius: 30px 30px 0 0;
+  background-color: #f6f6f6;
+  padding: 35px 15px 80px 15px;
+  display: flex;
+  flex-direction: column;
+}
+.menu__title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.menu__title__h1 {
+  margin-bottom: 0;
+}
+.menu__title__heart {
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+}
+.menu__title__heart:hover {
+  background: linear-gradient(#f69d3c, #3f87a6);
+}
+.menu__listing {
+  margin-bottom: 35px;
+}
+.menu__listing__h2 {
+  margin-bottom: 10px;
+}
+.menu__listing__underline {
+  background-color: #99E2D0;
+  height: 3px;
+  width: 40px;
+  margin-bottom: 15px;
+}
+.menu__listing__plat {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  margin-bottom: 15px;
+  padding: 15px 0 15px 12px;
+  position: relative;
+  animation-name: cardapparition;
+  animation-duration: 2s;
+  animation-fill-mode: backwards;
+}
+.menu__listing__plat span {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  font-weight: bold;
+}
+.menu__listing .delay0 {
+  animation-delay: 0;
+}
+.menu__listing .delay1 {
+  animation-delay: 0.2s;
+}
+.menu__listing .delay2 {
+  animation-delay: 0.4s;
+}
+.menu__listing .delay3 {
+  animation-delay: 0.6s;
+}
+.menu__listing .delay4 {
+  animation-delay: 0.8s;
+}
+.menu__listing .delay5 {
+  animation-delay: 1s;
+}
+.menu__listing .delay6 {
+  animation-delay: 1.2s;
+}
+.menu__listing .delay7 {
+  animation-delay: 1.4s;
+}
+.menu__listing .delay8 {
+  animation-delay: 1.6s;
+}
+.menu__listing .delay9 {
+  animation-delay: 1.8s;
+}
+.menu__listing button {
+  align-items: center;
+}
+
+.checkbox__logo {
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+@keyframes cardapparition {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .city {
   width: 100%;
   background-color: #eaeaea;
@@ -136,9 +290,8 @@ button:hover {
   background-color: #f6f6f6;
   padding: 50px 35px;
   display: flex;
-  justify-content: center;
-  align-content: center;
   flex-direction: column;
+  align-items: center;
 }
 .explore h1 {
   text-align: center;
@@ -259,29 +412,6 @@ button:hover {
   right: 25px;
   height: 20px;
   width: 20px;
-}
-
-.footer {
-  background: #353535;
-  color: white;
-  padding: 25px;
-}
-.footer__logo {
-  width: 100px;
-  margin-bottom: 20px;
-}
-.footer ul li {
-  margin-bottom: 12px;
-  display: flex;
-  flex-direction: row;
-}
-.footer ul li:hover {
-  font-weight: bold;
-}
-.footer ul img {
-  width: 12px;
-  height: 12px;
-  margin-right: 7px;
 }
 
 /*

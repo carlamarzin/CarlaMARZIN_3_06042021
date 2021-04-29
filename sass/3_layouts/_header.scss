@@ -4,9 +4,20 @@
     display: flex;
     justify-content: center;
     align-content: center;
+    position: relative;
+
     padding: 18px;
     box-shadow: 0.2em 0.2em 0.5em rgb(0 0 0 / 35%);
     &__arrow{
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 25px;
+    }
+    .displaynone{
         display: none;
+    }
+    &__logo{
+
     }
 }

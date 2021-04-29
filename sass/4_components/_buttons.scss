@@ -3,9 +3,10 @@ button{
     color: white;
     font-weight: bold;
     border: none;
-    padding: 1em 0;
+    padding: 1rem 0;
     border-radius: 100px;
     @include box-shadow;
+    width: 185px;
     &:hover{
         background: linear-gradient(lighten($secondary-color, 4), lighten($primary-color, 4));
     }
