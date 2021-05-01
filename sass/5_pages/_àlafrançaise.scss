@@ -16,6 +16,7 @@ main{
         display: flex;
         justify-content: space-between;
         margin-bottom: 35px;
+        position: relative
         &__h1{
             margin-bottom: 0;
         }
@@ -23,11 +24,17 @@ main{
             width: 22px;
             height: 22px;
             margin-right: 15px;
-            &:hover{
-                background: linear-gradient(#f69d3c, #3f87a6);
+            path{
+                fill-opacity: 1;
+            }
+            &:active{  
+                path{
+                    fill-opacity: 0;
+                }          
             }
         }
     }
+
     &__listing{
         margin-bottom: 35px;
         &__h2{
@@ -40,25 +47,63 @@ main{
             margin-bottom: 15px;
         }
         &__plat{
-            background-color: white;
             border-radius: 10px;
             @include box-shadow;
             margin-bottom: 15px;
-            padding: 15px 0 15px 12px;
+            width: 100%;
+
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
             position: relative;
 
-            animation-name: cardapparition;
-            animation-duration: 2s;
-            animation-fill-mode: backwards;
+            animation: cardapparition 1s ease-in-out;
+            
+            &:hover {
+                & > .menu__listing__plat__description {
+                    animation: checkboxAppear 1.8s ease-in-out forwards;
+                }
+                & .menu__listing__plat__checkbox__logo {
+                    animation: logoSpin 1.8s ease-in-out forwards;
+                }
+            }
 
-            span{
-                position: absolute;
-                right: 10px;
-                bottom: 15px;
+            &__description{
+                padding: 15px 0 15px 12px;
+                position: relative;
+                flex: 0.8;  
+                width: 80%;
+                p, h3{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    padding-bottom: 1px;
+                }
+            }
+            &__price{
+                height: 100%;
+                padding-top: 33px;
+                padding-left: 20px;
+                width: 20%;
+                flex: 0.2; 
                 font-weight: bold;
             }
+            &__checkbox{
+                width: 60px;
+                margin-left: -60px;
+                transform: translate(60px);
+
+                background: $third-color;
+                z-index: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &__logo{
+                    z-index: 2;
+                }
+            }
         }
-        
         .delay0{
             animation-delay: 0;
         }
@@ -71,36 +116,10 @@ main{
         .delay3{
             animation-delay: $card-delay*3;
         }
-        .delay4{
-            animation-delay: $card-delay*4;
-        }
-        .delay5{
-            animation-delay: $card-delay*5;
-        }
-        .delay6{
-            animation-delay: $card-delay*6;
-        }
-        .delay7{
-            animation-delay: $card-delay*7;
-        }
-        .delay8{
-            animation-delay: $card-delay*8;
-        }
-        .delay9{
-            animation-delay: $card-delay*9;
-        }
+        
         button{
             align-items: center;
         }
-    }
-
-}
-
-.checkbox{
-    &__logo{
-        width: 20px;
-        height: 20px;
-        display: none;
     }
 }
 
@@ -114,3 +133,50 @@ main{
         opacity: 1;
     }
 }
+
+@keyframes logoSpin {
+    0%, 100%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes checkboxAppear {
+    0%, 100%{
+        flex: 0.8;
+        width: 80%;
+    }
+    50%{
+        flex: .58;
+        width: 58%;
+    }
+}
+
+
+
+
+
+
+/*Si tu utilises les <i> de font awesome icon, tu as juste à passer le coeur en font-weigth bold sur un :hover
+et à lui mettre une couleur en background : webkit-linear-gradient (#color1, #color2);
+
+background clip
+
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+
+la magie , ce trouve dans le faites de mettre l'icone en bold
+
+"-webkit-background-clip: text " ça passe le validateur, mais pas sans le webkit (je l'ai passé comme ça en tout cas)
+///////
+
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+*/
