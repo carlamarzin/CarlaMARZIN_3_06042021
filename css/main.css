@@ -212,22 +212,27 @@ main {
   box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
   width: 100%;
+  padding: 12px;
   display: flex;
   flex-direction: row;
   overflow: hidden;
   position: relative;
   animation: cardapparition 1s ease-in-out;
 }
-.menu__listing__plat:hover > .menu__listing__plat__description {
+.menu__listing__plat:active > .menu__listing__plat__description {
   animation: checkboxAppear 1.8s ease-in-out forwards;
 }
-.menu__listing__plat:hover .menu__listing__plat__checkbox__logo {
+.menu__listing__plat:active > .menu__listing__plat__checkbox {
+  animation: checkboxMargin 1.8s ease-in-out forwards;
+}
+.menu__listing__plat:active .menu__listing__plat__checkbox__logo {
   animation: logoSpin 1.8s ease-in-out forwards;
 }
+.menu__listing__plat:active .menu__listing__plat__price {
+  animation: priceSlide 1.8s ease-in-out forwards;
+}
 .menu__listing__plat__description {
-  padding: 15px 0 15px 12px;
   position: relative;
-  flex: 0.8;
   width: 80%;
 }
 .menu__listing__plat__description p, .menu__listing__plat__description h3 {
@@ -237,19 +242,22 @@ main {
   padding-bottom: 1px;
 }
 .menu__listing__plat__price {
-  height: 100%;
-  padding-top: 33px;
-  padding-left: 20px;
-  width: 20%;
-  flex: 0.2;
+  padding-left: 8px;
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
   font-weight: bold;
+  display: flex;
+  align-items: flex-end;
 }
 .menu__listing__plat__checkbox {
   width: 60px;
-  margin-left: -60px;
-  transform: translate(60px);
+  height: 100%;
+  margin-top: -12px;
   background: #99E2D0;
   z-index: 1;
+  position: absolute;
+  right: -60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,21 +292,37 @@ main {
   }
 }
 @keyframes logoSpin {
-  0%, 100% {
+  0% {
     transform: rotate(0);
   }
-  50% {
+  100% {
     transform: rotate(360deg);
   }
 }
 @keyframes checkboxAppear {
-  0%, 100% {
+  0% {
     flex: 0.8;
     width: 80%;
   }
-  50% {
+  100% {
     flex: 0.58;
     width: 58%;
+  }
+}
+@keyframes checkboxMargin {
+  0% {
+    right: -60px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes priceSlide {
+  0% {
+    right: 15px;
+  }
+  100% {
+    right: 75px;
   }
 }
 /*
@@ -333,6 +357,12 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
 -webkit-background-clip: text;
 -moz-background-clip: text;
 -webkit-text-fill-color: transparent;
+
+
+
+
+
+
 */
 .city {
   width: 100%;
