@@ -12,6 +12,10 @@ main{
     padding: 35px 15px 80px 15px;
     display: flex;
     flex-direction: column;
+
+    position: relative;
+    top: -30px;
+    
     &__title{
         display: flex;
         justify-content: space-between;
@@ -25,22 +29,55 @@ main{
             &__empty{
                 color:black;
                 opacity: 1;
+                transition: all .5s;
+
+                &:active{
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    color: transparent;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
             }
             &__full{
                 color: transparent;
+                transition: all .5s;
+
+                &:active{
+                    ::before {
+                        opacity: 1;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    opacity: 0;
+                    font-weight : bold;
+                    background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
+                    -webkit-background-clip: text;
+                    color: transparent; 
+                    transition: opacity 0.3s;
+                }
 
             }
-            &:hover{
-                & > .menu__title__heart__empty{
+
+            /*
+            &:active{
+                & > .menu__title__heart__empty {
                     color: transparent;
                 }
-                & > .menu__title__heart__full{
+                & > .menu__title__heart__full {
                     font-weight : bold;
                     background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
                     -webkit-background-clip: text;
                     color: transparent;
                 }
-            }
+            }*/
         }
     }
 
@@ -72,16 +109,16 @@ main{
             
             &:active {
                 & > .menu__listing__plat__description {
-                    animation: checkboxAppear 1.8s ease-in-out forwards;
+                    animation: checkboxAppear 1s ease-in-out forwards;
                 }
                 & > .menu__listing__plat__checkbox {
-                    animation: checkboxMargin 1.8s ease-in-out forwards;
+                    animation: checkboxMargin 1s ease-in-out forwards;
                 }
                 & .menu__listing__plat__checkbox__logo {
-                    animation: logoSpin 1.8s ease-in-out forwards;
+                    animation: logoSpin 1s ease-in-out forwards;
                 }
                 & .menu__listing__plat__price {
-                    animation: priceSlide 1.8s ease-in-out forwards;
+                    animation: priceSlide 1s ease-in-out forwards;
                 }
             }
 
@@ -167,17 +204,6 @@ main{
 
 }
 
-@keyframes checkboxAppear {
-    0%{
-        flex: 0.8;
-        width: 80%;
-    }
-    100%{
-        flex: .58;
-        width: 58%;
-    }
-}
-
 @keyframes checkboxMargin {
     0% {
         right: -60px;
@@ -195,6 +221,9 @@ main{
         right: 75px;
     }
 }
+
+
+
 
 /*
 

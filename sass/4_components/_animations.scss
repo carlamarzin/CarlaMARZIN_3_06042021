@@ -1,0 +1,38 @@
+@keyframes cardapparition {
+    0% {
+        transform: translateY(15px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes logoSpin {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes checkboxMargin {
+    0% {
+        right: -60px;
+    }
+    100%{
+        right: 0px;
+    }
+}
+
+@keyframes priceSlide {
+    0% {
+        right: 15px;
+    }
+    100%{
+        right: 75px;
+    }
+}
