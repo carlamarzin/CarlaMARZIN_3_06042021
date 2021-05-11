@@ -229,9 +229,11 @@ main {
   color: black;
   opacity: 1;
   transition: all 0.5s;
+  z-index: 1;
 }
 .menu__title__heart__full {
   color: transparent;
+  z-index: 2;
   opacity: 0;
   transition: all 0.5s;
 }
@@ -335,36 +337,36 @@ main {
 }
 
 @keyframes cardapparition {
-  0% {
+  from {
     transform: translateY(15px);
     opacity: 0;
   }
-  100% {
+  to {
     transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes logoSpin {
-  0% {
+  from {
     transform: rotate(0);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 @keyframes checkboxMargin {
-  0% {
+  from {
     right: -60px;
   }
-  100% {
+  to {
     right: 0px;
   }
 }
 @keyframes priceSlide {
-  0% {
+  from {
     right: 15px;
   }
-  100% {
+  to {
     right: 75px;
   }
 }
@@ -381,7 +383,114 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
 
 
 
+.menu{
+    border-radius: 30px 30px 0 0;
+    background-color: $background-color-1;
+    padding: 35px 15px 80px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    position: relative;
+    top: -30px;
+
+    &__title{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        position: relative;
+        &__h1{
+            margin-bottom: 0;
+        }
+        &__heart{
+            margin-right: 15px;
+            &__empty{
+                color:black;
+                opacity: 1;
+                transition: all .5s;
+                z-index: 1;
+            }
+            &__full{
+                color: transparent;
+                z-index: 2;
+                opacity: 0;
+                transition: all .5s;
+            }
+            &:active{
+                & > .menu__title__heart__empty {
+                    color: transparent;
+                    opacity: 0;
+                }
+                & > .menu__title__heart__full {
+                    opacity: 1;
+                    font-weight : bold;
+                    background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
+                    -webkit-background-clip: text;
+                    color: transparent;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
 */
+.loader_wrapper {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  opacity: 1;
+  z-index: 10000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loaderDisapear 1s ease both;
+  animation-delay: 2.2s;
+}
+.loader_wrapper .loader {
+  display: flex;
+  flex-direction: row;
+}
+.loader_wrapper .loader .ball {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px;
+  border-radius: 50%;
+  transform: translate3d(0);
+  animation: bounce 0.6s alternate forwards;
+  animation-iteration-count: 3;
+}
+.loader_wrapper .loader .ball:nth-child(1) {
+  background-color: #99E2D0;
+}
+.loader_wrapper .loader .ball:nth-child(2) {
+  animation-delay: 0.2s;
+  background-color: #FF79DA;
+}
+.loader_wrapper .loader .ball:nth-child(3) {
+  animation-delay: 0.4s;
+  background-color: #9356DC;
+}
+
+@keyframes bounce {
+  to {
+    transform: translate3d(0, -30px, 0);
+  }
+}
+@keyframes loaderDisapear {
+  to {
+    opacity: 0;
+    z-index: -10;
+  }
+}
 .city {
   width: 100%;
   background-color: #eaeaea;

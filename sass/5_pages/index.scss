@@ -1,3 +1,63 @@
+.loader_wrapper{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: hsla(0,0%,100%,.9);
+
+    opacity: 1;
+    z-index: 10000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: loaderDisapear 1s ease both;
+    animation-delay: 2.2s;
+
+    .loader{
+        display: flex;
+        flex-direction: row;
+
+        .ball{
+            width: 20px;
+            height: 20px;
+            margin: 0 8px;
+            border-radius: 50%;
+
+            transform: translate3d(0);
+            animation: bounce 0.6s alternate forwards;
+            animation-iteration-count: 3;
+
+            &:nth-child(1){
+                background-color: $third-color;
+            }
+            &:nth-child(2){
+                animation-delay: 0.2s;
+                background-color: $secondary-color;
+            }
+            &:nth-child(3){
+                animation-delay: 0.4s;
+                background-color: $primary-color;
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+    to{
+        transform: translate3d(0, -30px, 0);
+    }
+}
+
+@keyframes loaderDisapear {
+    to{
+        opacity: 0;
+        z-index: -10;
+    }
+}
+
 .city{
     width: 100%;
     background-color: #eaeaea;
@@ -155,3 +215,4 @@
         }
     }
 }
+
