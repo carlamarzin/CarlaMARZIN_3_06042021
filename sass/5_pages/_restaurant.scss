@@ -2,8 +2,14 @@ main{
     width: 100%;
 }
 
-.image_restaurant{
+.div_image{
+    width: 100%;
+    height: 250px;
+    &_restaurant{
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 .menu{
@@ -12,15 +18,18 @@ main{
     padding: 35px 15px 80px 15px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
 
     position: relative;
     top: -30px;
     
     &__title{
+        width: 100%;
         display: flex;
         justify-content: space-between;
         margin-bottom: 35px;
-        position: relative
+        position: relative;
         &__h1{
             margin-bottom: 0;
         }
@@ -30,58 +39,30 @@ main{
                 color:black;
                 opacity: 1;
                 transition: all .5s;
-
-                &:active{
-                    &::before {
-                        opacity: 1;
-                    }
-                }
-
-                &::before {
-                    content: "";
-                    color: transparent;
-                    opacity: 0;
-                    transition: opacity 0.3s;
-                }
             }
             &__full{
                 color: transparent;
+                opacity: 0;
                 transition: all .5s;
-
-                &:active{
-                    ::before {
-                        opacity: 1;
-                    }
-                }
-
-                &::before {
-                    content: "";
-                    opacity: 0;
-                    font-weight : bold;
-                    background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
-                    -webkit-background-clip: text;
-                    color: transparent; 
-                    transition: opacity 0.3s;
-                }
-
             }
-
-            /*
             &:active{
                 & > .menu__title__heart__empty {
                     color: transparent;
+                    opacity: 0;
                 }
                 & > .menu__title__heart__full {
+                    opacity: 1;
                     font-weight : bold;
                     background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
                     -webkit-background-clip: text;
                     color: transparent;
                 }
-            }*/
+            }
         }
     }
 
     &__listing{
+        width: 100%;
         margin-bottom: 35px;
         &__h2{
             margin-bottom: 10px;
@@ -176,12 +157,14 @@ main{
         .delay3{
             animation-delay: $card-delay*3;
         }
-        
-        button{
-            align-items: center;
-        }
     }
 }
+
+.button__standard .commander{
+    align-items: center;
+}
+
+
 
 @keyframes cardapparition {
     0% {
@@ -226,31 +209,6 @@ main{
 
 
 /*
-
-
-/*
-
-background-clip: text;
--webkit-background-clip: text;
-color: transparent;
-
-.far{
-   cursor: pointer;
-   font-size: 1.5rem;
-   transition: all 0.5s linear;  
-}
-
-.far:hover{
-    font-weight : bold;
-    background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
-    -webkit-background-clip: text;
-     color: transparent;
-}
-
-
-
-
-///////
 
 
 background: linear-gradient(to bottom, map-get($color, secondary), map-get($color, primary));

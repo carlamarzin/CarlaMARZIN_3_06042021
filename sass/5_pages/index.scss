@@ -101,6 +101,9 @@
         @include box-shadow;
         position: relative;
 
+        text-decoration: none;
+        color: black;
+
         display: flex;
         flex-direction: column;
 

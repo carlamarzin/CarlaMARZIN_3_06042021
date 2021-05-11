@@ -2,11 +2,6 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -131,6 +126,10 @@ $breakpoints: (
   display: flex;
   flex-direction: row;
 }
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+}
 .footer ul li:hover {
   font-weight: bold;
 }
@@ -154,12 +153,52 @@ $breakpoints: (
   background: linear-gradient(#ff8de0, #9e67e0);
 }
 
+@keyframes cardapparition {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes logoSpin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes checkboxMargin {
+  0% {
+    right: -60px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes priceSlide {
+  0% {
+    right: 15px;
+  }
+  100% {
+    right: 75px;
+  }
+}
 main {
   width: 100%;
 }
 
-.image_restaurant {
+.div_image {
   width: 100%;
+  height: 250px;
+}
+.div_image_restaurant {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .menu {
@@ -168,62 +207,47 @@ main {
   padding: 35px 15px 80px 15px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
   position: relative;
   top: -30px;
 }
 .menu__title {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
-  position: relative .menu__title __h1;
-  position-margin-bottom: 0;
+  position: relative;
+}
+.menu__title__h1 {
+  margin-bottom: 0;
 }
 .menu__title__heart {
   margin-right: 15px;
-  /*
-  &:active{
-      & > .menu__title__heart__empty {
-          color: transparent;
-      }
-      & > .menu__title__heart__full {
-          font-weight : bold;
-          background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
-          -webkit-background-clip: text;
-          color: transparent;
-      }
-  }*/
 }
 .menu__title__heart__empty {
   color: black;
   opacity: 1;
   transition: all 0.5s;
 }
-.menu__title__heart__empty:active::before {
-  opacity: 1;
-}
-.menu__title__heart__empty::before {
-  content: "";
-  color: transparent;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
 .menu__title__heart__full {
   color: transparent;
+  opacity: 0;
   transition: all 0.5s;
 }
-.menu__title__heart__full:active ::before {
-  opacity: 1;
-}
-.menu__title__heart__full::before {
-  content: "";
+.menu__title__heart:active > .menu__title__heart__empty {
+  color: transparent;
   opacity: 0;
+}
+.menu__title__heart:active > .menu__title__heart__full {
+  opacity: 1;
   font-weight: bold;
   background: linear-gradient(184deg, #ff79da 0%, #9356dc 100%);
   -webkit-background-clip: text;
   color: transparent;
-  transition: opacity 0.3s;
 }
 .menu__listing {
+  width: 100%;
   margin-bottom: 35px;
 }
 .menu__listing__h2 {
@@ -305,36 +329,46 @@ main {
 .menu__listing .delay3 {
   animation-delay: 0.6s;
 }
-.menu__listing button {
+
+.button__standard .commander {
   align-items: center;
 }
 
-/*
-
-
-/*
-
-background-clip: text;
--webkit-background-clip: text;
-color: transparent;
-
-.far{
-   cursor: pointer;
-   font-size: 1.5rem;
-   transition: all 0.5s linear;  
+@keyframes cardapparition {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-
-.far:hover{
-    font-weight : bold;
-    background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
-    -webkit-background-clip: text;
-     color: transparent;
+@keyframes logoSpin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
-
-
-
-///////
+@keyframes checkboxMargin {
+  0% {
+    right: -60px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes priceSlide {
+  0% {
+    right: 15px;
+  }
+  100% {
+    right: 75px;
+  }
+}
+/*
 
 
 background: linear-gradient(to bottom, map-get($color, secondary), map-get($color, primary));
@@ -450,6 +484,8 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   border-radius: 10px;
   box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
   position: relative;
+  text-decoration: none;
+  color: black;
   display: flex;
   flex-direction: column;
 }
