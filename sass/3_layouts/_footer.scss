@@ -11,6 +11,7 @@
             margin-bottom: 12px;
             display: flex;
             flex-direction: row;
+            transition: all 0.2s;
             a{
                 text-decoration: none;
                 color: white;
@@ -23,6 +24,26 @@
             width: 12px;
             height: 12px;
             margin-right: 7px;
+        }
+    }
+}
+
+@media screen and (min-width: 800px){
+    .footer nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer__logo{
+        width: 150px;
+        height: 100%;
+    }
+    .footer ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        li{
+            margin: 0 20px;
         }
     }
 }

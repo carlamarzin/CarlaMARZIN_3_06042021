@@ -125,6 +125,7 @@ $breakpoints: (
   margin-bottom: 12px;
   display: flex;
   flex-direction: row;
+  transition: all 0.2s;
 }
 .footer ul li a {
   text-decoration: none;
@@ -139,6 +140,27 @@ $breakpoints: (
   margin-right: 7px;
 }
 
+@media screen and (min-width: 800px) {
+  .footer nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__logo {
+    width: 150px;
+    height: 100%;
+  }
+
+  .footer ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer ul li {
+    margin: 0 20px;
+  }
+}
 .button__standard {
   background: linear-gradient(#FF79DA, #9356DC);
   color: white;
@@ -148,6 +170,7 @@ $breakpoints: (
   border-radius: 100px;
   box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
   width: 185px;
+  transition: all 0.2s;
 }
 .button__standard:hover {
   background: linear-gradient(#ff8de0, #9e67e0);
@@ -211,6 +234,9 @@ main {
   width: 100%;
   position: relative;
   top: -30px;
+}
+.menu__wrapper {
+  width: 100%;
 }
 .menu__title {
   width: 100%;
@@ -332,8 +358,22 @@ main {
   animation-delay: 0.6s;
 }
 
+@media screen and (min-width: 1000px) {
+  .menu__wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+  .menu__listing {
+    margin: 0 20px;
+  }
+  .menu__title {
+    padding-left: 20px;
+  }
+}
 .button__standard .commander {
   align-items: center;
+  transition: all 0.2s;
 }
 
 @keyframes cardapparition {
@@ -552,6 +592,7 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   flex-direction: row;
   align-items: center;
   box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
 }
 .functionning__step:hover {
   background: #f2eafb;
@@ -582,6 +623,28 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   padding: 5px;
 }
 
+@media screen and (min-width: 800px) {
+  .functionning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .functionning_wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .functionning__step {
+    margin-left: 50px;
+  }
+
+  .functionning h1 {
+    justify-items: center;
+    margin-bottom: 40px;
+  }
+}
 .restaurants {
   background: #f6f6f6;
   padding: 40px 20px;
@@ -597,6 +660,7 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   color: black;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s;
 }
 .restaurants__card:hover {
   transform: scale(1.01);
@@ -643,6 +707,23 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   width: 20px;
 }
 
+@media screen and (min-width: 1000px) {
+  .restaurants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .restaurants h1 {
+    margin-bottom: 40px;
+  }
+
+  .restaurants_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+}
 /*
 @import "feuilles de styles";
 @import "base"; 
