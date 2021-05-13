@@ -156,6 +156,7 @@ $breakpoints: (
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 20px;
   }
   .footer ul li {
     margin: 0 20px;
@@ -698,6 +699,36 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
 .restaurants__card__text p {
   font-size: 1.1em;
   padding-top: 5px;
+}
+.restaurants__card__text__heart {
+  position: absolute;
+  top: 28px;
+  right: 25px;
+  height: 20px;
+  width: 20px;
+}
+.restaurants__card__text__heart__empty {
+  color: black;
+  opacity: 1;
+  transition: all 0.5s;
+  z-index: 1;
+}
+.restaurants__card__text__heart__full {
+  color: transparent;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.restaurants__card__text__heart:active > .restaurants__card__text__heart__empty {
+  color: transparent;
+  opacity: 0;
+}
+.restaurants__card__text__heart:active > .restaurants__card__text__heart__full {
+  opacity: 1;
+  font-weight: bold;
+  background: linear-gradient(184deg, #ff79da 0%, #9356dc 100%);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .restaurants__card__text img {
   position: absolute;
