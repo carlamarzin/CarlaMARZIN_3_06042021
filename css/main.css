@@ -700,8 +700,6 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   position: absolute;
   top: 28px;
   right: 25px;
-  height: 20px;
-  width: 20px;
 }
 .restaurants__card__text__heart__empty {
   color: black;
@@ -715,11 +713,11 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   opacity: 0;
   transition: all 0.5s;
 }
-.restaurants__card__text__heart:active > .restaurants__card__text__heart__empty {
+.restaurants__card__text__heart:hover > .restaurants__card__text__heart__empty {
   color: transparent;
   opacity: 0;
 }
-.restaurants__card__text__heart:active > .restaurants__card__text__heart__full {
+.restaurants__card__text__heart:hover > .restaurants__card__text__heart__full {
   opacity: 1;
   font-weight: bold;
   background: linear-gradient(184deg, #ff79da 0%, #9356dc 100%);
