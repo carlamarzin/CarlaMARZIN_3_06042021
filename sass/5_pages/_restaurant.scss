@@ -41,27 +41,23 @@ main{
             margin-right: 15px;
             &__empty{
                 color:black;
-                opacity: 1;
                 transition: all .5s;
-                z-index: 1;
             }
             &__full{
-                color: transparent;
-                z-index: 2;
                 opacity: 0;
                 transition: all .5s;
+                font-weight : bold;
+                background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
+                -webkit-background-clip: text;
+                color: transparent;
             }
-            &:active{
+            &:hover{
                 & > .menu__title__heart__empty {
                     color: transparent;
                     opacity: 0;
                 }
                 & > .menu__title__heart__full {
                     opacity: 1;
-                    font-weight : bold;
-                    background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
-                    -webkit-background-clip: text;
-                    color: transparent;
                 }
             }
         }
@@ -94,7 +90,7 @@ main{
 
             animation: cardapparition 1s ease-in-out;
             
-            &:active {
+            &:hover {
                 & > .menu__listing__plat__description {
                     animation: checkboxAppear 1s ease-in-out forwards;
                 }
