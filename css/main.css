@@ -213,6 +213,7 @@ $breakpoints: (
 }
 main {
   width: 100%;
+  background-color: #f6f6f6;
 }
 
 .div_image {
@@ -341,6 +342,8 @@ main {
 }
 .menu__listing__plat__checkbox__logo {
   z-index: 2;
+  width: 20px;
+  height: 20px;
 }
 .menu__listing .delay0 {
   animation-delay: 0;
@@ -407,76 +410,6 @@ main {
     right: 75px;
   }
 }
-/*
-
-
-background: linear-gradient(to bottom, map-get($color, secondary), map-get($color, primary));
--webkit-background-clip: text;
--moz-background-clip: text;
--webkit-text-fill-color: transparent;
-
-
-
-
-
-
-.menu{
-    border-radius: 30px 30px 0 0;
-    background-color: $background-color-1;
-    padding: 35px 15px 80px 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    position: relative;
-    top: -30px;
-
-    &__title{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 35px;
-        position: relative;
-        &__h1{
-            margin-bottom: 0;
-        }
-        &__heart{
-            margin-right: 15px;
-            &__empty{
-                color:black;
-                opacity: 1;
-                transition: all .5s;
-                z-index: 1;
-            }
-            &__full{
-                color: transparent;
-                z-index: 2;
-                opacity: 0;
-                transition: all .5s;
-            }
-            &:active{
-                & > .menu__title__heart__empty {
-                    color: transparent;
-                    opacity: 0;
-                }
-                & > .menu__title__heart__full {
-                    opacity: 1;
-                    font-weight : bold;
-                    background: linear-gradient(184deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 100%); 
-                    -webkit-background-clip: text;
-                    color: transparent;
-                }
-            }
-        }
-    }
-
-
-
-
-
-
-*/
 .loader_wrapper {
   width: 100%;
   height: 100%;
@@ -544,7 +477,7 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   width: 16px;
   height: 16px;
 }
-.city p {
+.city h3 {
   margin-left: 12px;
   font-size: 1em;
   font-weight: bold;
@@ -595,12 +528,12 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   background: #f2eafb;
   box-shadow: 0.2em 0.2em 0.8em rgba(0, 0, 0, 0.4);
 }
-.functionning__step img {
+.functionning__step svg {
   height: 20px;
   width: 20px;
   margin-left: 1em;
 }
-.functionning__step img__hover {
+.functionning__step:hover svg path {
   fill: #9356DC;
 }
 .functionning__step p {
@@ -697,7 +630,7 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   padding-top: 5px;
 }
 .restaurants__card__text__heart {
-  position: absolute;
+  position: absolute !important;
   top: 28px;
   right: 25px;
 }
@@ -724,19 +657,14 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
   -webkit-background-clip: text;
   color: transparent;
 }
-.restaurants__card__text img {
-  position: absolute;
-  top: 28px;
-  right: 25px;
-  height: 20px;
-  width: 20px;
-}
 
 @media screen and (min-width: 1000px) {
   .restaurants {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-right: 10%;
+    padding-left: 10%;
   }
   .restaurants h1 {
     margin-bottom: 40px;
@@ -747,6 +675,12 @@ background: linear-gradient(to bottom, map-get($color, secondary), map-get($colo
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurants {
+    padding-right: 15%;
+    padding-left: 15%;
   }
 }
 /*
